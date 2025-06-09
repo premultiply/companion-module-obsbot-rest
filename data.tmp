@@ -1,0 +1,173 @@
+record.control
+record.bitrate
+record.encoder
+record.resolution
+ndi-rtsp.control
+ndi-rtsp.bitrate
+ndi-rtsp.encoder
+ndi-rtsp.resolution
+hdmi.output.resolution
+usb.mode
+audio.input.source
+audio.input.volume
+audio.input.mute
+audio.input.enc
+audio.input.agc
+ai.workmode
+ai.trackspeed
+ai.gesturecontrol.lockedtarget
+ai.gesturecontrol.recording
+ai.gesturecontrol.zoom
+ai.gesturecontrol.zoomfactor
+ai.gesturecontrol.dynamiczoom
+ai.gesturecontrol.dynamiczoomdirection
+image.hdr.control
+image.af.mode
+image.af.trackmode
+image.af.motorposition
+image.af.windowcenter
+image.exposure.mode
+image.exposure.auto.mode
+image.exposure.auto.compensation
+image.exposure.auto.isorange
+image.exposure.auto.lock
+image.exposure.manual.shuttertime
+image.exposure.manual.iso
+image.exposure.antiflick.mode
+image.whitebalance.config
+image.style.mode
+ptz.gimbalinvert
+ptz.zoom
+ptz.preset
+album.filelist
+
+
+
+
+
+function OB(e) {
+  return fr.post('/camera/sdk/gimbal_speed', e)
+}
+function $B(e) {
+  return fr.post('/camera/sdk/zoom', e)
+}
+function DB(e) {
+  return fr.post('/camera/sdk/trigger_preset', e)
+}
+function IB(e) {
+  return fr.post('/camera/sdk/preset', e)
+}
+function AB(e) {
+  return fr.delete('/camera/sdk/preset', {
+    data: e
+  })
+}
+function MB(e) {
+  return fr.put('/camera/sdk/preset_rename', e)
+}
+function LB(e) {
+  return fr.put('/camera/sdk/preset', e)
+}
+function FB(e) {
+  return fr.post('/camera/sdk/af', e)
+}
+function zB(e) {
+  return fr.post('/camera/sdk/mf_position', e)
+}
+function NB(e) {
+  return fr.post('/camera/sdk/ai_trace', e)
+}
+function HB(e) {
+  return fr.post('/camera/sdk/capture', e)
+}
+function BB(e) {
+  return fr.post('/camera/sdk/record', e)
+}
+function WB(e) {
+  return fr.post('/camera/sdk/key_verify', e)
+}
+function jB(e) {
+  return fr.get('/camera/sdk/networkconfig', {
+    params: e
+  })
+}
+function UB(e, t) {
+  return fr.post('/camera/sdk/networkconfig', e, t)
+}
+function Gz(e) {
+  return {
+    access_token: 'abc123'
+  }
+}
+function qz(e) {
+  return fr.post('/camera/sdk/sdcard_format', e)
+}
+
+
+
+
+wsData: {
+        af_mode: ey.AFC,
+        capture: !1,
+        mf_position: 50,
+        preset_cnt: [],
+        ratio: 1,
+        record: !1,
+        target: ty.NONE,
+        sdcard: {
+          status: nn.NOT_PLUGGED_IN,
+          format: Ql.UNKNOWN,
+          total: 0,
+          available: 0,
+          sdcard_speed: va.M_4_10,
+          avail_time: 0
+        }
+
+
+        var ey = (e => (e[e.AFC = 1] = 'AFC', e[e.AFS = 2] = 'AFS', e[e.MF = 3] = 'MF', e)) (ey || {
+}),
+ty = (
+  e => (
+    e[e.NONE = 0] = 'NONE',
+    e[e.HUMAN = 1] = 'HUMAN',
+    e[e.ANIMAL = 2] = 'ANIMAL',
+    e
+  )
+) (ty || {
+});
+const VB = [
+  {
+    label: 'no_target',
+    value: 0,
+    hidden: !0
+  },
+  {
+    label: 'ok_human',
+    value: 1
+  },
+  {
+    label: 'ok_animal',
+    value: 2
+  }
+];
+var dN = (
+  e => (
+    e[e.F_60 = 0] = 'F_60',
+    e[e.F_59_94 = 1] = 'F_59_94',
+    e[e.F_50 = 2] = 'F_50',
+    e[e.F_48 = 3] = 'F_48',
+    e[e.F_30 = 4] = 'F_30',
+    e[e.F_29_97 = 5] = 'F_29_97',
+    e[e.F_25 = 6] = 'F_25',
+    e[e.F_24 = 7] = 'F_24',
+    e
+  )
+) (dN || {
+}),
+fN = (
+  e => (
+    e[e.R_3840X2160 = 0] = 'R_3840X2160',
+    e[e.R_1920X1080 = 1] = 'R_1920X1080',
+    e[e.R_1280X720 = 2] = 'R_1280X720',
+    e
+  )
