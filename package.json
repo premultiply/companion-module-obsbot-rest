@@ -1,0 +1,29 @@
+{
+	"name": "obsbot-rest",
+	"version": "1.0.0",
+	"main": "src/index.js",
+	"type": "module",
+	"scripts": {
+		"format": "prettier -w .",
+		"package": "companion-module-build",
+		"lint:raw": "eslint",
+		"lint": "yarn lint:raw ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bitfocus/companion-module-obsbot-rest.git"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"@companion-module/base": "~1.11.2",
+		"queue-fifo": "^0.2.6",
+		"ws": "^8.18.2"
+	},
+	"devDependencies": {
+		"@companion-module/tools": "^2.1.1",
+		"eslint": "^9.24.0",
+		"prettier": "^3.5.3"
+	},
+	"prettier": "@companion-module/tools/.prettierrc.json",
+	"packageManager": "yarn@4.5.3"
+}

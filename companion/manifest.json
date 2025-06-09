@@ -1,0 +1,32 @@
+{
+	"id": "obsbot-rest",
+	"name": "obsbot-rest",
+	"shortname": "OBSBOT REST",
+	"description": "Companion module for OBSBOT PTZ cameras that use the OBSBOT REST API.",
+	"version": "1.0.0",
+	"license": "MIT",
+	"repository": "git+https://github.com/bitfocus/companion-module-obsbot-rest.git",
+	"bugs": "https://github.com/bitfocus/companion-module-obsbot-rest/issues",
+	"maintainers": [
+		{
+			"name": "premultiply",
+			"email": "4681172+premultiply@users.noreply.github.com"
+		}
+	],
+	"legacyIds": [],
+	"runtime": {
+		"type": "node22",
+		"api": "nodejs-ipc",
+		"apiVersion": "0.0.0",
+		"entrypoint": "../src/index.js"
+	},
+	"manufacturer": "OBSBOT REST",
+	"products": [
+		"Tail Air",
+		"Tail 2"
+	],
+	"keywords": [
+		"PTZ",
+		"camera"
+	]
+}
