@@ -34,9 +34,9 @@ const API_ENDPOINTS = [
 	//'/ai/gesturecontrol/dynamiczoom',
 	//'/ai/gesturecontrol/dynamiczoomdirection',
 	//'/image/hdr/control',
-	//'/image/af/mode', // available from status
+	'/image/af/mode', // also available from status
 	'/image/af/trackmode',
-	//'/image/af/motorposition', // available from status
+	'/image/af/motorposition', // also available from status
 	'/image/af/windowcenter',
 	'/image/exposure/mode',
 	'/image/exposure/auto/mode',
@@ -49,8 +49,8 @@ const API_ENDPOINTS = [
 	'/image/whitebalance/config',
 	'/image/style/mode',
 	'/ptz/gimbalinvert',
-	//'/ptz/zoom', // from available from status
-	//'/ptz/preset', // from available from status
+	'/ptz/zoom', // also from available from status
+	//'/ptz/preset', // also from available from status
 	//'/album/filelist',
 ]
 
@@ -62,7 +62,8 @@ class ObsbotRestCameraInstance extends InstanceBase {
 	}
 
 	async init(config) {
-		this.data = this.emptyCache()
+		this.data = {} //this.emptyCache()
+		this.status = {}
 
 		this.config = config
 
@@ -311,11 +312,13 @@ class ObsbotRestCameraInstance extends InstanceBase {
 		} else {
 			try {
 				msgValue = JSON.parse(data)
-				//console.log(JSON.stringify(msgValue, null, 2))
+				console.log(JSON.stringify(msgValue, null, 2))
 			} catch (e) {
 				msgValue = data
 			}
 		}
+
+		this.status = msgValue
 	}
 
 	async sendCommand(endpoint = '/', method = 'POST', data = {}) {
@@ -376,7 +379,7 @@ class ObsbotRestCameraInstance extends InstanceBase {
 		this.log('debug', 'pollData()')
 
 		if (this.queue.isEmpty()) {
-			console.log(JSON.stringify(this.data, null, 2))
+			//console.log(JSON.stringify(this.data, null, 2))
 
 			for (const endpoint of API_ENDPOINTS) {
 				this.queue.enqueue(endpoint)
