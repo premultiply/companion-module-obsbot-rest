@@ -1,12 +1,10 @@
 export function setVariables(self) {
-	const variables = [
+	return [
 		{ variableId: 'exposureMode', name: 'Exposure mode' },
 		{ variableId: 'focusMode', name: 'Focus mode' },
 		{ variableId: 'focusPosition', name: 'Focus position' },
 		{ variableId: 'zoomPosition', name: 'Zoom position' },
 	]
-
-	return variables
 }
 export function checkVariables(self) {
 	self.setVariableValues({
