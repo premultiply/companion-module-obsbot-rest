@@ -171,3 +171,58 @@ fN = (
     e[e.R_1280X720 = 2] = 'R_1280X720',
     e
   )
+)
+
+
+							Wa.emit(Mo.TOAST_HANDLE, _),
+								e.isPauseUpdateAiTrace || f('target', _.target),
+								f('af_mode', _.af_mode),
+								f('mf_position', _.mf_position),
+								f('capture', _.capture),
+								f('record', _.record),
+								f('sdcard', _.sdcard),
+								_.iszoom || f('ratio', Number(_.ratio.toFixed(2))),
+								f('preset_cnt', _.preset_cnt || [])
+
+
+  wsData: {
+    af_mode: ey.AFC,           // Autofokus-Modus (Enum)
+    capture: false,            // Aufnahme läuft?
+    mf_position: 50,           // Manueller Fokus-Position (0-100)
+    preset_cnt: [],            // Preset-Positionen
+    ratio: 1,                  // Seitenverhältnis
+    record: false,             // Aufnahme läuft?
+    target: ty.NONE,           // Zieltyp (Enum)
+    sdcard: {
+        status: nn.NOT_PLUGGED_IN, // SD-Kartenstatus (Enum)
+        format: Ql.UNKNOWN,        // SD-Kartenformat (Enum)
+        total: 0,                  // Gesamtkapazität
+        available: 0,              // Verfügbarer Speicher
+        sdcard_speed: va.M_4_10,   // Schreibgeschwindigkeit (Enum)
+        avail_time: 0,             // Verfügbare Aufnahmezeit
+    },
+}
+
+var ey = { AFC: 1, AFS: 2, MF: 3 }
+var ty = { NONE: 0, HUMAN: 1, ANIMAL: 2 }
+var nn = {
+    NOT_PLUGGED_IN: 0,
+    PREPARING: 1,
+    PLUGGED_IN: 2,
+    NO_ENOUGH_SPACE: 3,
+    FS_NOT_SUPPORTED: 4,
+    FS_ERROR: 5,
+    INITIALIZING: 6,
+    READONLY: 7,
+    NO_PARTED: 8,
+    UNKNOWN_ERROR: 255,
+}
+var Ql = { UNKNOWN: 0, FAT32: 1, EXFAT: 2 }
+var va = {
+    M_1_4: 0,
+    M_4_10: 1,
+    M_10_30: 2,
+    M_30_50: 3,
+    M_50_100: 4,
+    M_100: 5,
+}
